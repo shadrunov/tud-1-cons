@@ -1,0 +1,5 @@
+FROM debian:bookworm-slim
+
+COPY client/target/x86_64-unknown-linux-gnu/release/client .
+
+ENTRYPOINT ["./client"]

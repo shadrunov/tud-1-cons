@@ -1,0 +1,30 @@
+version: '3'
+services:
+  peer1:
+    image: peer_app
+    container_name: peer1
+    command: --id 1 --port 10001 --peers 2:peer2:10002,3:peer3:10003
+    ports:
+      - "10001:10001"
+  peer2:
+    image: peer_app
+    container_name: peer2
+    command: --id 2 --port 10002 --peers 1:peer1:10001,3:peer3:10003
+    ports:
+      - "10002:10002"
+  peer3:
+    image: peer_app
+    container_name: peer3
+    command: --id 3 --port 10003 --peers 1:peer1:10001,2:peer2:10002
+    ports:
+      - "10003:10003"
+  client_app:
+    image: client_app
+    container_name: client_app
+    command: --peers peer1:10001,peer2:10002,peer3:10003
+    depends_on:
+      - peer1
+      - peer2
+      - peer3
+    volumes:
+      - ./logs:/logs

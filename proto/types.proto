@@ -1,0 +1,52 @@
+syntax = "proto3";
+package zab;
+
+enum State {
+  Election = 0;
+  Following = 1;
+  Leading = 2;
+}
+
+message ZxId {
+  uint32 epoch = 1;
+  uint32 counter = 2;
+}
+
+message Vote {
+  uint32 id = 1;
+  ZxId last_zx_id = 2;
+}
+
+message BankTransaction {
+  uint32 account_id = 1;
+  int32 amount = 2;
+}
+
+message BankTransactionMapEntry {
+  ZxId key = 1;
+  BankTransaction value = 2;
+}
+
+message BankTransactionMap {
+  repeated BankTransactionMapEntry entries = 1;
+}
+
+message History {
+  ZxId last_commited_zx_id = 1;
+  ZxId old_threshold = 2;
+  BankTransactionMap proposed = 3;
+  BankTransactionMap committed = 4;
+}
+
+message Snap {
+  map<uint32, int32> db = 1;
+  History history = 2;
+}
+
+message Diff {
+  BankTransactionMap transactions = 1;
+}
+
+message Trunc {
+  ZxId last_commited_zx_id = 1;
+}
