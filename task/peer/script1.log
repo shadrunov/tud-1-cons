@@ -1,0 +1,38 @@
+2025-01-26 22:56:54,060 __main__:128 INFO [MainThread] Initiated peer 1 on port 10001. Peers: [(2, 'localhost', 10002)]
+2025-01-26 22:56:54,061 __main__:26 INFO [MainThread] Init server on port 10001
+2025-01-26 22:56:54,062 peer_service:15 INFO [MainThread] Init ZabPeerService
+2025-01-26 22:56:54,062 client_service:13 INFO [MainThread] Init ZabClientService
+2025-01-26 22:56:54,063 __main__:50 INFO [MainThread] Init worker
+2025-01-26 22:56:54,063 __main__:58 INFO [MainThread] Initiated worker
+2025-01-26 22:56:54,063 __main__:137 INFO [MainThread] Starting server and client
+2025-01-26 22:56:54,063 __main__:40 INFO [MainThread] Starting server on port 10001
+2025-01-26 22:56:54,064 __main__:42 INFO [MainThread] Server started, listening on 10001
+2025-01-26 22:56:54,064 __main__:71 INFO [Thread-1] Starting elections
+2025-01-26 22:56:54,064 __main__:89 INFO [Thread-1] Sending election notification to (1, 'localhost', 10001)
+2025-01-26 22:56:54,067 peer_service:23 INFO [ThreadPoolExecutor-0_0] Received election notification from ipv6:%5B::1%5D:50200 
+vote {
+  id: 1
+  last_zx_id {
+  }
+}
+id: 1
+round: 1
+
+2025-01-26 22:56:54,067 __main__:93 INFO [Thread-1] Received response from localhost: 
+2025-01-26 22:56:54,067 __main__:89 INFO [Thread-1] Sending election notification to (2, 'localhost', 10002)
+2025-01-26 22:56:54,069 __main__:93 INFO [Thread-1] Received response from localhost: 
+2025-01-26 22:56:54,069 __main__:95 INFO [Thread-1] Done elections
+2025-01-26 22:56:54,069 peer_service:23 INFO [ThreadPoolExecutor-0_0] Received election notification from ipv6:%5B::1%5D:50203 
+vote {
+  id: 2
+  last_zx_id {
+  }
+}
+id: 2
+round: 1
+
+2025-01-26 22:56:54,573 __main__:67 INFO [Thread-1] Sending election notification
+2025-01-26 22:56:55,077 __main__:67 INFO [Thread-1] Sending election notification
+2025-01-26 22:56:55,582 __main__:67 INFO [Thread-1] Sending election notification
+2025-01-26 22:56:56,086 __main__:67 INFO [Thread-1] Sending election notification
+2025-01-26 22:56:56,591 __main__:67 INFO [Thread-1] Sending election notification

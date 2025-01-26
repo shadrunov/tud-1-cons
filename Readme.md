@@ -41,3 +41,10 @@ Execute `./build_docker_containers.sh`, this will create a container called `cli
 > 1.Build your peer code, e.g, using go build (doesn't apply for interpreted languages like python) or better add your build command at the beginning of the `build_docker_containers.sh`
 > 2. Run `./build_docker_containers.sh`
 > 3. Only then (re)start the docker-compose
+
+
+```bash
+python3 -m grpc_tools.protoc -Ipeer/proto --python_out=peer --pyi_out=peer --grpc_python_out=peer peer/proto/zab_client.proto
+python3 -m grpc_tools.protoc -Ipeer/proto --python_out=peer --pyi_out=peer --grpc_python_out=peer peer/proto/zab_peer.proto
+python3 -m grpc_tools.protoc -Ipeer/proto --python_out=peer peer/proto/types.proto
+```
