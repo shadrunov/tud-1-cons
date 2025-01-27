@@ -13,7 +13,7 @@ services:
     ports:
       - "10002:10002"
   peer3:
-    image: peer_app
+    image: mypeer_app
     container_name: peer3
     command: --id 3 --port 10003 --peers 1:peer1:10001,2:peer2:10002
     ports:
