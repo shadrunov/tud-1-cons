@@ -58,3 +58,18 @@ class ZabPeerService(zab_peer_pb2_grpc.ZabPeerServiceServicer):
         logger.info(f"Received GetState request")
         shared_map = self.wrapper.master.shared_map
         return zab_peer_pb2.GetStateResponse(state=shared_map["state"])
+
+    def SendFollowerInfo(self, request, context):
+        return Empty()
+    
+    def SendAckNewLeader(self, request, context):
+        return Empty()
+    
+    def ProposeTransaction(self, request, context):
+        return Empty()
+    
+    def CommitTransaction(self, request, context):
+        return Empty()
+    
+    def UpdateHistoryOldThreshold(self, request, context):
+        return Empty()
