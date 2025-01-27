@@ -1,38 +1,238 @@
-2025-01-26 22:56:54,060 __main__:128 INFO [MainThread] Initiated peer 1 on port 10001. Peers: [(2, 'localhost', 10002)]
-2025-01-26 22:56:54,061 __main__:26 INFO [MainThread] Init server on port 10001
-2025-01-26 22:56:54,062 peer_service:15 INFO [MainThread] Init ZabPeerService
-2025-01-26 22:56:54,062 client_service:13 INFO [MainThread] Init ZabClientService
-2025-01-26 22:56:54,063 __main__:50 INFO [MainThread] Init worker
-2025-01-26 22:56:54,063 __main__:58 INFO [MainThread] Initiated worker
-2025-01-26 22:56:54,063 __main__:137 INFO [MainThread] Starting server and client
-2025-01-26 22:56:54,063 __main__:40 INFO [MainThread] Starting server on port 10001
-2025-01-26 22:56:54,064 __main__:42 INFO [MainThread] Server started, listening on 10001
-2025-01-26 22:56:54,064 __main__:71 INFO [Thread-1] Starting elections
-2025-01-26 22:56:54,064 __main__:89 INFO [Thread-1] Sending election notification to (1, 'localhost', 10001)
-2025-01-26 22:56:54,067 peer_service:23 INFO [ThreadPoolExecutor-0_0] Received election notification from ipv6:%5B::1%5D:50200 
-vote {
-  id: 1
-  last_zx_id {
-  }
+2025-01-27 10:57:48,146 __main__:389 INFO [MainThread] Initiated peer 1 on port 10001. Peers: {2: ('localhost', 10002), 3: ('localhost', 10003), 4: ('localhost', 10004)}
+2025-01-27 10:57:48,146 __main__:392 INFO [MainThread] Members: {1: ('localhost', 10001), 2: ('localhost', 10002), 3: ('localhost', 10003), 4: ('localhost', 10004)}
+2025-01-27 10:57:48,146 __main__:31 INFO [MainThread] Init server on port 10001
+2025-01-27 10:57:48,149 peer_service:20 INFO [MainThread] Init ZabPeerService
+2025-01-27 10:57:48,149 client_service:13 INFO [MainThread] Init ZabClientService
+2025-01-27 10:57:48,150 __main__:55 INFO [MainThread] Init worker
+2025-01-27 10:57:48,150 __main__:63 INFO [MainThread] Initiated worker
+2025-01-27 10:57:48,150 __main__:402 INFO [MainThread] Starting server and client
+2025-01-27 10:57:48,150 __main__:45 INFO [MainThread] Starting server on port 10001
+2025-01-27 10:57:48,151 __main__:47 INFO [MainThread] Server started, listening on 10001
+2025-01-27 10:57:48,151 __main__:175 INFO [Thread-1] Starting elections
+2025-01-27 10:57:48,151 __main__:193 INFO [Thread-1] Popping queue
+2025-01-27 10:57:48,151 __main__:200 INFO [Thread-1] Queue is empty, sending election request to all
+2025-01-27 10:57:48,151 __main__:85 DEBUG [Thread-1] Made election request: {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,151 __main__:98 INFO [Thread-1] Sending election request to peer 1
+2025-01-27 10:57:48,152 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,155 peer_service:28 INFO [ThreadPoolExecutor-0_0] Received election notification {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,155 peer_service:29 INFO [ThreadPoolExecutor-0_0] Peer vote: id 1 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:48,155 peer_service:32 INFO [ThreadPoolExecutor-0_0] Peer id: 1, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:48,155 peer_service:39 INFO [ThreadPoolExecutor-0_0] Appending request to queue
+2025-01-27 10:57:48,155 __main__:94 INFO [Thread-1] Received response from localhost:10001: 
+2025-01-27 10:57:48,155 __main__:98 INFO [Thread-1] Sending election request to peer 2
+2025-01-27 10:57:48,155 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,157 peer_service:28 INFO [ThreadPoolExecutor-0_0] Received election notification {'vote': {'id': 2, 'lastZxId': {}}, 'id': 2, 'round': 1}
+2025-01-27 10:57:48,157 peer_service:29 INFO [ThreadPoolExecutor-0_0] Peer vote: id 2 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:48,157 peer_service:32 INFO [ThreadPoolExecutor-0_0] Peer id: 2, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:48,157 peer_service:39 INFO [ThreadPoolExecutor-0_0] Appending request to queue
+2025-01-27 10:57:48,157 peer_service:28 INFO [ThreadPoolExecutor-0_1] Received election notification {'vote': {'id': 3, 'lastZxId': {}}, 'id': 3, 'round': 1}
+2025-01-27 10:57:48,157 peer_service:29 INFO [ThreadPoolExecutor-0_1] Peer vote: id 3 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:48,157 peer_service:32 INFO [ThreadPoolExecutor-0_1] Peer id: 3, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:48,157 peer_service:39 INFO [ThreadPoolExecutor-0_1] Appending request to queue
+2025-01-27 10:57:48,157 __main__:94 INFO [Thread-1] Received response from localhost:10002: 
+2025-01-27 10:57:48,158 __main__:98 INFO [Thread-1] Sending election request to peer 3
+2025-01-27 10:57:48,158 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,158 peer_service:28 INFO [ThreadPoolExecutor-0_2] Received election notification {'vote': {'id': 4, 'lastZxId': {}}, 'id': 4, 'round': 1}
+2025-01-27 10:57:48,158 peer_service:29 INFO [ThreadPoolExecutor-0_2] Peer vote: id 4 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:48,158 peer_service:32 INFO [ThreadPoolExecutor-0_2] Peer id: 4, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:48,158 peer_service:39 INFO [ThreadPoolExecutor-0_2] Appending request to queue
+2025-01-27 10:57:48,159 __main__:94 INFO [Thread-1] Received response from localhost:10003: 
+2025-01-27 10:57:48,159 __main__:98 INFO [Thread-1] Sending election request to peer 4
+2025-01-27 10:57:48,159 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,161 __main__:94 INFO [Thread-1] Received response from localhost:10004: 
+2025-01-27 10:57:48,161 __main__:349 INFO [Thread-1] Sleeping: 0.5
+2025-01-27 10:57:48,665 __main__:193 INFO [Thread-1] Popping queue
+2025-01-27 10:57:48,665 __main__:205 INFO [Thread-1] Queue is not empty. Processing 1 {'vote': {'id': 1, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:48,665 __main__:255 DEBUG [Thread-1] Putting to ReceivedVotes: (1, [id: 1
+last_zx_id {
 }
-id: 1
-round: 1
-
-2025-01-26 22:56:54,067 __main__:93 INFO [Thread-1] Received response from localhost: 
-2025-01-26 22:56:54,067 __main__:89 INFO [Thread-1] Sending election notification to (2, 'localhost', 10002)
-2025-01-26 22:56:54,069 __main__:93 INFO [Thread-1] Received response from localhost: 
-2025-01-26 22:56:54,069 __main__:95 INFO [Thread-1] Done elections
-2025-01-26 22:56:54,069 peer_service:23 INFO [ThreadPoolExecutor-0_0] Received election notification from ipv6:%5B::1%5D:50203 
-vote {
-  id: 2
-  last_zx_id {
-  }
+, 1])
+2025-01-27 10:57:48,665 __main__:152 DEBUG [Thread-1] Key 1 was not in table. Version: 1, new value: [id: 1
+last_zx_id {
 }
-id: 2
-round: 1
-
-2025-01-26 22:56:54,573 __main__:67 INFO [Thread-1] Sending election notification
-2025-01-26 22:56:55,077 __main__:67 INFO [Thread-1] Sending election notification
-2025-01-26 22:56:55,582 __main__:67 INFO [Thread-1] Sending election notification
-2025-01-26 22:56:56,086 __main__:67 INFO [Thread-1] Sending election notification
-2025-01-26 22:56:56,591 __main__:67 INFO [Thread-1] Sending election notification
+, 1, 1]
+2025-01-27 10:57:48,665 __main__:154 DEBUG [Thread-1] Put to ReceivedVotes: (1, [id: 1
+last_zx_id {
+}
+, 1, 1])
+2025-01-27 10:57:48,665 __main__:349 INFO [Thread-1] Sleeping: 0.5
+2025-01-27 10:57:49,167 __main__:193 INFO [Thread-1] Popping queue
+2025-01-27 10:57:49,167 __main__:205 INFO [Thread-1] Queue is not empty. Processing 1 {'vote': {'id': 2, 'lastZxId': {}}, 'id': 2, 'round': 1}
+2025-01-27 10:57:49,167 __main__:236 INFO [Thread-1] 214 n.round == self.master.shared_map['round'] and n.vote > self.master.shared_map['vote']. accepting the vote
+2025-01-27 10:57:49,167 __main__:241 INFO [Thread-1] New our vote: {'id': 2, 'lastZxId': {}}
+2025-01-27 10:57:49,167 __main__:85 DEBUG [Thread-1] Made election request: {'vote': {'id': 2, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,167 __main__:98 INFO [Thread-1] Sending election request to peer 1
+2025-01-27 10:57:49,167 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 2, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,169 peer_service:28 INFO [ThreadPoolExecutor-0_0] Received election notification {'vote': {'id': 2, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,169 peer_service:29 INFO [ThreadPoolExecutor-0_0] Peer vote: id 2 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:49,169 peer_service:32 INFO [ThreadPoolExecutor-0_0] Peer id: 1, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:49,169 peer_service:39 INFO [ThreadPoolExecutor-0_0] Appending request to queue
+2025-01-27 10:57:49,170 __main__:94 INFO [Thread-1] Received response from localhost:10001: 
+2025-01-27 10:57:49,170 __main__:98 INFO [Thread-1] Sending election request to peer 2
+2025-01-27 10:57:49,170 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 2, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,171 __main__:94 INFO [Thread-1] Received response from localhost:10002: 
+2025-01-27 10:57:49,171 __main__:98 INFO [Thread-1] Sending election request to peer 3
+2025-01-27 10:57:49,171 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 2, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,173 __main__:94 INFO [Thread-1] Received response from localhost:10003: 
+2025-01-27 10:57:49,173 __main__:98 INFO [Thread-1] Sending election request to peer 4
+2025-01-27 10:57:49,173 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 2, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,174 __main__:94 INFO [Thread-1] Received response from localhost:10004: 
+2025-01-27 10:57:49,174 __main__:249 INFO [Thread-1] Sent our new vote to all
+2025-01-27 10:57:49,174 __main__:255 DEBUG [Thread-1] Putting to ReceivedVotes: (2, [id: 2
+last_zx_id {
+}
+, 1])
+2025-01-27 10:57:49,174 __main__:152 DEBUG [Thread-1] Key 2 was not in table. Version: 1, new value: [id: 2
+last_zx_id {
+}
+, 1, 1]
+2025-01-27 10:57:49,175 __main__:154 DEBUG [Thread-1] Put to ReceivedVotes: (2, [id: 2
+last_zx_id {
+}
+, 1, 1])
+2025-01-27 10:57:49,175 __main__:162 DEBUG [Thread-1] ReceivedVotes: {1: [id: 1
+last_zx_id {
+}
+, 1, 1], 2: [id: 2
+last_zx_id {
+}
+, 1, 1]}
+2025-01-27 10:57:49,175 __main__:349 INFO [Thread-1] Sleeping: 0.5
+2025-01-27 10:57:49,678 peer_service:28 INFO [ThreadPoolExecutor-0_1] Received election notification {'vote': {'id': 3, 'lastZxId': {}}, 'id': 2, 'round': 1}
+2025-01-27 10:57:49,678 peer_service:29 INFO [ThreadPoolExecutor-0_1] Peer vote: id 3 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:49,679 peer_service:32 INFO [ThreadPoolExecutor-0_1] Peer id: 2, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:49,679 peer_service:39 INFO [ThreadPoolExecutor-0_1] Appending request to queue
+2025-01-27 10:57:49,680 __main__:193 INFO [Thread-1] Popping queue
+2025-01-27 10:57:49,680 __main__:205 INFO [Thread-1] Queue is not empty. Processing 1 {'vote': {'id': 3, 'lastZxId': {}}, 'id': 3, 'round': 1}
+2025-01-27 10:57:49,680 __main__:236 INFO [Thread-1] 214 n.round == self.master.shared_map['round'] and n.vote > self.master.shared_map['vote']. accepting the vote
+2025-01-27 10:57:49,680 __main__:241 INFO [Thread-1] New our vote: {'id': 3, 'lastZxId': {}}
+2025-01-27 10:57:49,680 __main__:85 DEBUG [Thread-1] Made election request: {'vote': {'id': 3, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,680 __main__:98 INFO [Thread-1] Sending election request to peer 1
+2025-01-27 10:57:49,680 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 3, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,682 peer_service:28 INFO [ThreadPoolExecutor-0_2] Received election notification {'vote': {'id': 3, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,682 peer_service:29 INFO [ThreadPoolExecutor-0_2] Peer vote: id 3 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:49,682 peer_service:32 INFO [ThreadPoolExecutor-0_2] Peer id: 1, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:49,682 peer_service:39 INFO [ThreadPoolExecutor-0_2] Appending request to queue
+2025-01-27 10:57:49,682 __main__:94 INFO [Thread-1] Received response from localhost:10001: 
+2025-01-27 10:57:49,682 __main__:98 INFO [Thread-1] Sending election request to peer 2
+2025-01-27 10:57:49,682 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 3, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,684 __main__:94 INFO [Thread-1] Received response from localhost:10002: 
+2025-01-27 10:57:49,684 __main__:98 INFO [Thread-1] Sending election request to peer 3
+2025-01-27 10:57:49,684 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 3, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,686 __main__:94 INFO [Thread-1] Received response from localhost:10003: 
+2025-01-27 10:57:49,686 __main__:98 INFO [Thread-1] Sending election request to peer 4
+2025-01-27 10:57:49,686 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 3, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:49,687 __main__:94 INFO [Thread-1] Received response from localhost:10004: 
+2025-01-27 10:57:49,687 __main__:249 INFO [Thread-1] Sent our new vote to all
+2025-01-27 10:57:49,687 __main__:255 DEBUG [Thread-1] Putting to ReceivedVotes: (3, [id: 3
+last_zx_id {
+}
+, 1])
+2025-01-27 10:57:49,687 __main__:152 DEBUG [Thread-1] Key 3 was not in table. Version: 1, new value: [id: 3
+last_zx_id {
+}
+, 1, 1]
+2025-01-27 10:57:49,687 __main__:154 DEBUG [Thread-1] Put to ReceivedVotes: (3, [id: 3
+last_zx_id {
+}
+, 1, 1])
+2025-01-27 10:57:49,687 __main__:162 DEBUG [Thread-1] ReceivedVotes: {1: [id: 1
+last_zx_id {
+}
+, 1, 1], 2: [id: 2
+last_zx_id {
+}
+, 1, 1], 3: [id: 3
+last_zx_id {
+}
+, 1, 1]}
+2025-01-27 10:57:49,688 __main__:349 INFO [Thread-1] Sleeping: 0.5
+2025-01-27 10:57:50,186 peer_service:28 INFO [ThreadPoolExecutor-0_0] Received election notification {'vote': {'id': 4, 'lastZxId': {}}, 'id': 3, 'round': 1}
+2025-01-27 10:57:50,186 peer_service:29 INFO [ThreadPoolExecutor-0_0] Peer vote: id 4 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:50,187 peer_service:32 INFO [ThreadPoolExecutor-0_0] Peer id: 3, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:50,187 peer_service:39 INFO [ThreadPoolExecutor-0_0] Appending request to queue
+2025-01-27 10:57:50,190 __main__:193 INFO [Thread-1] Popping queue
+2025-01-27 10:57:50,190 __main__:205 INFO [Thread-1] Queue is not empty. Processing 1 {'vote': {'id': 4, 'lastZxId': {}}, 'id': 4, 'round': 1}
+2025-01-27 10:57:50,191 __main__:236 INFO [Thread-1] 214 n.round == self.master.shared_map['round'] and n.vote > self.master.shared_map['vote']. accepting the vote
+2025-01-27 10:57:50,191 __main__:241 INFO [Thread-1] New our vote: {'id': 4, 'lastZxId': {}}
+2025-01-27 10:57:50,191 __main__:85 DEBUG [Thread-1] Made election request: {'vote': {'id': 4, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:50,191 __main__:98 INFO [Thread-1] Sending election request to peer 1
+2025-01-27 10:57:50,191 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 4, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:50,193 peer_service:28 INFO [ThreadPoolExecutor-0_1] Received election notification {'vote': {'id': 4, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:50,193 peer_service:29 INFO [ThreadPoolExecutor-0_1] Peer vote: id 4 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:50,194 peer_service:32 INFO [ThreadPoolExecutor-0_1] Peer id: 1, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:50,194 peer_service:39 INFO [ThreadPoolExecutor-0_1] Appending request to queue
+2025-01-27 10:57:50,194 __main__:94 INFO [Thread-1] Received response from localhost:10001: 
+2025-01-27 10:57:50,194 __main__:98 INFO [Thread-1] Sending election request to peer 2
+2025-01-27 10:57:50,194 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 4, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:50,196 peer_service:28 INFO [ThreadPoolExecutor-0_2] Received election notification {'vote': {'id': 4, 'lastZxId': {}}, 'id': 2, 'round': 1}
+2025-01-27 10:57:50,196 peer_service:29 INFO [ThreadPoolExecutor-0_2] Peer vote: id 4 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:50,196 peer_service:32 INFO [ThreadPoolExecutor-0_2] Peer id: 2, Peer state: 0 Election, Peer round: 1
+2025-01-27 10:57:50,196 peer_service:39 INFO [ThreadPoolExecutor-0_2] Appending request to queue
+2025-01-27 10:57:50,197 __main__:94 INFO [Thread-1] Received response from localhost:10002: 
+2025-01-27 10:57:50,197 __main__:98 INFO [Thread-1] Sending election request to peer 3
+2025-01-27 10:57:50,197 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 4, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:50,200 __main__:94 INFO [Thread-1] Received response from localhost:10003: 
+2025-01-27 10:57:50,200 __main__:98 INFO [Thread-1] Sending election request to peer 4
+2025-01-27 10:57:50,200 __main__:90 DEBUG [Thread-1] Sending election request: {'vote': {'id': 4, 'lastZxId': {}}, 'id': 1, 'round': 1}
+2025-01-27 10:57:50,203 peer_service:28 INFO [ThreadPoolExecutor-0_0] Received election notification {'vote': {'id': 4, 'lastZxId': {}}, 'id': 4, 'state': 'Leading', 'round': 1}
+2025-01-27 10:57:50,203 peer_service:29 INFO [ThreadPoolExecutor-0_0] Peer vote: id 4 last_zx_id epoch 0 counter 0
+2025-01-27 10:57:50,203 peer_service:32 INFO [ThreadPoolExecutor-0_0] Peer id: 4, Peer state: 2 Leading, Peer round: 1
+2025-01-27 10:57:50,203 peer_service:39 INFO [ThreadPoolExecutor-0_0] Appending request to queue
+2025-01-27 10:57:50,203 __main__:94 INFO [Thread-1] Received response from localhost:10004: 
+2025-01-27 10:57:50,203 __main__:249 INFO [Thread-1] Sent our new vote to all
+2025-01-27 10:57:50,203 __main__:255 DEBUG [Thread-1] Putting to ReceivedVotes: (4, [id: 4
+last_zx_id {
+}
+, 1])
+2025-01-27 10:57:50,203 __main__:152 DEBUG [Thread-1] Key 4 was not in table. Version: 1, new value: [id: 4
+last_zx_id {
+}
+, 1, 1]
+2025-01-27 10:57:50,203 __main__:154 DEBUG [Thread-1] Put to ReceivedVotes: (4, [id: 4
+last_zx_id {
+}
+, 1, 1])
+2025-01-27 10:57:50,203 __main__:268 INFO [Thread-1] Peer 1 is 1
+2025-01-27 10:57:50,203 __main__:70 INFO [Thread-1] Done elections. Current state: 1
+2025-01-27 10:57:50,708 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:51,214 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:51,718 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:52,223 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:52,729 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:53,234 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:53,737 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:54,240 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:54,745 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:55,248 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:55,753 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:56,253 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:56,759 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:57,264 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:57,769 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:58,272 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:58,778 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:59,278 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:57:59,778 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:00,283 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:00,789 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:01,294 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:01,799 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:02,304 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:02,810 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:03,315 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:03,819 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:04,324 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:04,829 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:05,331 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:05,836 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:06,339 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:06,842 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:07,347 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:07,851 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:08,353 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:08,858 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:09,363 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:09,868 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:10,372 __main__:74 INFO [Thread-1] Sending election notification
+2025-01-27 10:58:10,873 __main__:74 INFO [Thread-1] Sending election notification
